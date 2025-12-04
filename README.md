@@ -16,7 +16,7 @@ Ideal for macOS administrators and users. It provides a broad set of functions t
 ## Installation
 
 ```powershell
-PS> Install-Module -Name PSMacToolkit (coming soon)
+PS> Install-Module -Name PSMacToolkit
 ```
 
 ## Usage
