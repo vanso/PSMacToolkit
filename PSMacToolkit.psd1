@@ -12,7 +12,7 @@
 RootModule = 'PSMacToolkit.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.0'
+ModuleVersion = '2.0.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Core')
@@ -30,7 +30,7 @@ CompanyName = 'Vincent Anso'
 Copyright = '(c) Vincent Anso. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'This PowerShell module, ideal for macOS administrators and users, enhances user interactions and system management with a broad set of functions. These capabilities include common tasks, among others, such as file and folder selection, system information retrieval, clipboard operations, and user notifications.'
+Description = 'This PowerShell module, ideal for macOS administrators and users, enhances user interactions and system management with a broad set of functions. These capabilities include common tasks, among others, such as file and folder selection, system information retrieval, clipboard operations, and user notifications. It also provides practical tools for managing Wi-Fi connections, 802.1X network profiles, and basic system actions like volume control, screen locking, and power management.'
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '7.2'
@@ -66,7 +66,13 @@ RequiredModules = @( @{ ModuleName = 'PowerShellOSA' ; RequiredVersion = '1.0.0.
 # FormatsToProcess = @()
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = 'PSMacToolkitLib.psm1'
+NestedModules = @(
+    'PSMacToolkitLib.psm1',
+    'StandardAdditions.psm1',
+    'SystemInformation.psm1',
+    'LoginWindow.psm1',
+    'Network.psm1'
+)
 
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
@@ -111,7 +117,29 @@ FunctionsToExport = @(
     'Show-Dialog',
     'Show-Notification',
     'Stop-MacComputer',
-    'Suspend-MacComputer'
+    'Suspend-MacComputer',
+    'Get-HardwareInfo',
+    'Connect-WiFiNetwork',
+    'Disconnect-WiFiNetwork',
+    'Find-WiFiNetwork',
+    'Get-WiFiNetworkInfo',
+    'Get-WiFiPreferences',
+    'Get-WiFiPreferredNetwork',
+    'Get-WiFiState',
+    'Set-WiFiState',
+    'Connect-8021XWiFiNetwork',
+    'Get-8021XConfigurationProfile',
+    'Get-8021XNetworkInfo',
+    'Get-8021XPreferences',
+    'Start-8021XClient',
+    'Stop-8021XClient',
+    'Get-CurrentNetworkLocation',
+    'Get-NetworkEthernetInterface',
+    'Get-NetworkInfo',
+    'Get-NetworkInterface',
+    'Get-NetworkLocation',
+    'Get-NetworkService',
+    'Get-PrimaryNetworkInterface'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -134,7 +162,13 @@ AliasesToExport = @(
     'Display-Dialog',
     'Display-Notification',
     'Log-Out',
-    'Sleep-MacComputer'
+    'Sleep-MacComputer',
+    'Connect-EnterpriseWiFiNetwork',
+    'Get-EnterpriseConfigurationProfile',
+    'Get-EnterpriseNetworkInfo',
+    'Get-EnterprisePreferences',
+    'Start-EnterpriseClient',
+    'Stop-EnterpriseClient'
 )
 
 # DSC resources to export from this module
