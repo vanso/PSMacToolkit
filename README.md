@@ -2,7 +2,7 @@
 
 **PSMacToolkit** is a PowerShell module.
 
-Ideal for macOS administrators and users. It provides a broad set of functions to simplify system management and enhance user interaction. The module enables actions such as retrieving system information, selecting files and folders, displaying dialogs and notifications, and interacting with applications. By combining native macOS capabilities with PowerShell, it helps streamline everyday tasks and improve workflow efficiency.
+This PowerShell module, ideal for macOS administrators and users, enhances user interactions and system management with a broad set of functions. These capabilities include common tasks, among others, such as file and folder selection, system information retrieval, clipboard operations, and user notifications. It also provides practical tools for managing Wi-Fi connections, 802.1X network profiles, and basic system actions like volume control, screen locking, and power management.
 
 ## Requirements
 
@@ -80,6 +80,30 @@ Invoke-DataDetection "Contact jsnover@contoso.com, call +1-555-123-4567, visit 1
 | **🌍 Localization** ||
 | Get-LocalizedString | Return the localized string for the specified key. |
 | Get-LocalizedStrings | Return the localized strings from a .loctable file in a given language, or from a .strings file. |
+| **📡 Network & Connectivity** | |
+| Get-CurrentNetworkLocation | Get the current location for the current user's network. |
+| Get-NetworkEthernetInterface | Get a list of the ethernet interfaces for the current user's network. |
+| Get-NetworkInfo | Get information about the network. |
+| Get-NetworkInterface | Get a list of the interfaces for the current user's network. |
+| Get-NetworkLocation | Get a list of the locations for the current user's network. |
+| Get-NetworkService | Get a list of the services for the current user's network. |
+| Get-PrimaryNetworkInterface | Get information about the primary network interface. |
+| **Wi-Fi** | |
+| Connect-WiFiNetwork | Join a Wi-Fi network. |
+| Disconnect-WiFiNetwork | Disassociate from any Wi-Fi network. |
+| Find-WiFiNetwork | Scans for WiFi networks. |
+| Get-WiFiNetworkInfo | Get information about the current Wi-Fi network. |
+| Get-WiFiPreferences | Return the preferences for the current WiFi network configuration. |
+| Get-WiFiPreferredNetwork | The Wi-Fi networks your computer has connected to. |
+| Get-WiFiState | Get the Wi-Fi interface power state. |
+| Set-WiFiState | Set the Wi-Fi interface power state. |
+| **802.1X** | |
+| Connect-8021XWiFiNetwork | Join an enterprise Wi-Fi network. |
+| Get-8021XConfigurationProfile | Get 802.1X settings from the configuration profiles for the current user's network service. |
+| Get-8021XPreferences | Get the 802.1X preferences for the current user's network. |
+| Get-8021XNetworkInfo | Get information about the eapol client for a given interface |
+| Start-8021XClient | Start an eaopl client for a given interface. |
+| Stop-8021XClient | Stop an eaopl client for a given interface. |
 | **🎨 User Interface & Interaction**  ||
 | Get-UserCredential | Prompt the user to enter their credentials. |
 | Select-File | Choose a file on a disk or server. |
@@ -94,6 +118,7 @@ Invoke-DataDetection "Contact jsnover@contoso.com, call +1-555-123-4567, visit 1
 | Show-Dialog | Display a dialog box, optionally requesting user input. |
 | Show-Notification | Display a notification. At least one of the body text and the title must be specified. |
 | **🖥️ System & Hardware**  ||
+| Get-HardwareInfo | Get information about the hardware. |
 | Get-SystemInfo | Get information about the system. |
 | Get-SystemInformation | Reports system hardware and software configuration. |
 | Get-SystemAttribute | Test attributes of this computer. |
@@ -109,7 +134,7 @@ Invoke-DataDetection "Contact jsnover@contoso.com, call +1-555-123-4567, visit 1
 
 ## Available Aliases in the Module
 
-| Alias name (AppleScript naming)      |          Function name                                                    |
+| Alias name     |          Function name                                                    |
 |:-------------------------|:-------------------------------------------------------------------------------------|
 | Choose-Application       | Select-Application            |
 | Choose-Color             | Select-Color                  |
@@ -119,11 +144,17 @@ Invoke-DataDetection "Contact jsnover@contoso.com, call +1-555-123-4567, visit 1
 | Choose-FromList          | Select-FromList               |
 | Choose-RemoteApplication | Select-RemoteApplication      |
 | Choose-URL               | Select-URL                    |
+| Connect-EnterpriseWiFiNetwork | Connect-8021XWiFiNetwork |
 | Display-Alert            | Show-Alert                    |
 | Display-Dialog           | Show-Dialog                   |
 | Display-Notification     | Show-Notification             |
+| Get-EnterpriseNetworkConfigurationProfile | Get-8021XConfigurationProfile |
+| Get-EnterpriseNetworkInfo | Get-8021XNetworkInfo | 
+| Get-EnterprisePreferences | Get-8021XPreferences | 
 | Log-Out                  | Disconnect-UserSession        |
 | Sleep-MacComputer        | Suspend-MacComputer           |
+| Start-EnterpriseNetworkClient | Start-8021XClient |
+| Stop-EnterpriseNetworkClient | Stop-8021XClient |
 
 ## License
 
